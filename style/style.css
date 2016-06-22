@@ -1,0 +1,21 @@
+body{
+background-color: gray;
+color: white;
+}
+
+button{
+  margin-left: 45%;
+}
+
+p{
+  font-size: 32px;
+  font-style: Arial;
+  text-align: center;
+}
+
+h1{
+  font-size: 48px;
+  font-style: Arial;
+  margin-top: 20%;
+  text-align: center;
+}
