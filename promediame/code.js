@@ -20,7 +20,7 @@ function promediame(vector){
     var promedio;
     var suma = 0;
     for (var i = 0; i < vector.length; i++) {
-      suma = suma + vector[i];
+      suma += vector[i];
     }
     promedio = suma / vector.length;
     return promedio;

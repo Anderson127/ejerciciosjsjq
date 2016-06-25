@@ -13,28 +13,28 @@ result == {
 }
 */
 
-var vector = [ 1, 2, "hello", 3, 4, "world", true, 5, false ]
+var vector = [ 1, 2, "hello", 3, 4, "world", true, 5, false];
 typeExtractor(vector);
 
 function typeExtractor(vector){
   try{
-    var objeto = {};
+    var obj = {};
     for (var i = 0; i < vector.length; i++) {
-      if (typeof vector[i] === 'number') {
-        Object.defineProperty(objeto, 'numeros', {value: vector[i], writable:true, enumerable:true, configurable:true});
+      if (typeof vector[i] == 'number') {
+        obj.numero = vector[i];
       }
-      else if(typeof vector[i] === 'string'){
-        Object.defineProperty(objeto, 'caracteres', {value: vector[i], writable:true, enumerable:true, configurable:true});
+      else if(typeof vector[i] == 'string'){
+        obj.caracteres = vector[i];
       }
-      else if(typeof vector[i] === 'boolean'){
-        Object.defineProperty(objeto, 'booleanos', {value: vector[i], writable:true, enumerable:true, configurable:true});
+      else if(typeof vector[i] == 'boolean'){
+        obj.buleanos = vector[i];
       }
       else
       {
-        console.log("el tipo de dato es diferente a number, string, boolean");
+        alert("el tipo de dato: " + vector[i] + " es diferente a number, string o boolean");
       }
     }
-    console.log(objeto);
+    console.log(obj);
   }
   catch(err){
     console.log(err.message);

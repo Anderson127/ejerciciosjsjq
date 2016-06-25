@@ -38,12 +38,27 @@ function hacervector(tamano){
   }
 }
 
-function multiplier(vector, multi){
+/*function multiplier(vector, multi){
   try{
     vector2 = [];
     for (i = 0; i < vector.length; i++) {
       vector2[i] = vector[i]*multi;
     }
+    document.getElementById("mensaje").innerHTML = "El primer vector era: [" + vector + "]";
+    document.getElementById("mensaje2").innerHTML = "Despues de multiplicar el vector por el número "+ multi +
+     ", quedo de la siguiente manera: [" + vector2 + "]";
+  }
+  catch(err){
+    document.getElementById("mensaje").innerHTML = err.mesagge;
+  }
+}
+*/
+
+function multiplier(vector, multi){
+  try{
+    vector2 = vector.map(function(num) {
+    return num * multi;
+    });
     document.getElementById("mensaje").innerHTML = "El primer vector era: [" + vector + "]";
     document.getElementById("mensaje2").innerHTML = "Despues de multiplicar el vector por el número "+ multi +
      ", quedo de la siguiente manera: [" + vector2 + "]";
