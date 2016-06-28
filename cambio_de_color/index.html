@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change the color of the squares on click</title>
+
+  <style>
+    .square {
+      float: left;
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      margin: 10px;
+    }
+
+    .blue { background: blue; }
+    .red { background: red; }
+  </style>
+</head>
+<body>
+  <h1>Al hacer click sobre los cuadrados azules, se debe cambiar su color a amarillo</h1>
+
+  <div class="square blue"></div>
+  <div class="square red"></div>
+  <div class="square red"></div>
+  <div class="square blue"></div>
+  <div class="square red"></div>
+  <div class="square blue"></div>
+  <div class="square blue"></div>
+  <div class="square blue"></div>
+  <div class="square red"></div>
+  <div class="square blue"></div>
+  <div class="square red"></div>
+  <div class="square red"></div>
+  <div class="square blue"></div>
+  <div class="square red"></div>
+  <div class="square red"></div>
+  <div class="square red"></div>
+  <div class="square blue"></div>
+  <div class="square red"></div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.blue').on('click', function(){
+        $(this).css('background', 'yellow');
+      })
+    })
+  </script>
+</body>
+</html>
