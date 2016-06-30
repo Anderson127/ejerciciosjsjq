@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Lista de Tareas</h1>
+
+    <input type="text" id="input" placeholder="Cual es tu tarea?">
+    <ul class="todo-list">
+    </ul>
+  </div>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('#input').on('keyup',function(event){
+        if(event.keyCode == 13){
+          var value = $(this).val();
+          var elementlist = $('<li class="list"><input class="check" type="checkbox" > ' + value + '</li>');
+          $('.todo-list').append(elementlist);
+          $(this).val('');
+        }
+      });
+
+      $('.todo-list').on('mouseover','.list', function(){
+        $(this).css('background','#ecdcdc');
+      });
+
+      $('.todo-list').on('mouseleave','.list', function(){
+        $(this).css('background','white');
+      });
+
+      $('.check').on('click', function(){
+        if($(this).is(':checked'))
+        {
+          alert('funciona');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
