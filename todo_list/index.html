@@ -18,7 +18,7 @@
   <script>
     $(document).ready(function(){
       $('#input').on('keyup',function(event){
-        if(event.keyCode == 13){
+        if(event.which === 13){
           var value = $(this).val();
           var elementlist = $('<li class="list"><input class="check" type="checkbox" > ' + value + '</li>');
           $('.todo-list').append(elementlist);
@@ -26,20 +26,34 @@
         }
       });
 
-      $('.todo-list').on('mouseover','.list', function(){
+      $('.todo-list').on('mouseenter','.list', function(){
         $(this).css('background','#ecdcdc');
+        var x = $('<h3>X</h3>');
+        $(this).append(x);
       });
 
       $('.todo-list').on('mouseleave','.list', function(){
         $(this).css('background','white');
+        $('h3').remove();
       });
 
-      $('.check').on('click', function(){
+      $(document).on('click','.check', function(){
+        var check = $(this).closest('.list');
         if($(this).is(':checked'))
         {
-          alert('funciona');
+          check.css({'background': 'white', 'color': '#575757', 'text-decoration': 'line-through'});
+          //$('h3').remove();
+        }else{
+          check.css({'background': '#ecdcdc', 'color': 'black', 'text-decoration': 'none'});
+         // var x = $('<h3>X</h3>');
+         //$(this).closest('.list').append(x);
         }
       });
+
+      $(document).on('click', 'h3', function(){
+        $(this).closest('.list').remove();
+      });
+
     });
   </script>
 </body>

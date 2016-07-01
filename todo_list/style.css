@@ -31,4 +31,10 @@ ul {
 li {
   padding: 15px 15px 15px 10px;
   border-radius: 5px;
+  color: black;
+}
+
+h3{
+  float: right;
+  margin-top: 0px;
 }
